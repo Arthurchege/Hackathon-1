@@ -1,0 +1,106 @@
+/* Font Setup (optional if you downloaded them) */
+@font-face {
+  font-family: 'Unna';
+  src: url('fonts/Unna-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1c29;
+  background-color: #fff;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item label {
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  color: #4a7600;
+  transition: color 0.3s;
+}
+
+.nav-item label:hover {
+  color: #2a5000;
+}
+
+.nav-item input {
+  display: none;
+}
+
+.hidden-content {
+  display: none;
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.nav-item input:checked + .hidden-content {
+  display: block;
+}
+
+.hidden-content img {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.hidden-content p {
+  font-size: 14px;
+  color: #444;
+}
+
+.faya p {
+  color: red;
+  font-weight: bold;
+}
+
+/* Right Section */
+.main-content {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideIn 1s ease;
+}
+
+/* Transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
